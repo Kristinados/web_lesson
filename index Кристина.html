@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .form_container {
+            width: 700px;
+            margin: 60px auto;
+            background-color: #f5f5f5f5;
+            padding: 40px 60px;
+        }
+
+        .form_row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .form_title {
+            font-size: 49px;
+        }
+        .form_input{
+display: block;
+width: 100%;
+box-sizing: border-box;
+border-radius: 2px;
+border: 0;
+outline: 0;
+padding: 15px 10px;
+        }
+        .form_item--half{ 
+           width: calc(50% - 12px);
+        }
+        .form_label{
+            margin-bottom: 10px;
+            display: block;
+        }
+        .form_input:focus{
+            border: 1px solid #f89151;
+        }
+        .form_textarea{
+            resize: none;
+            height: 90px;
+        }
+        .form_item{
+            width: 100%;
+        }
+        .my_radio + span::after{
+content: '';
+background: linear-gradient(white, #efefef);
+display: block;
+border-radius: 50%;
+width: 20px;
+height: 20px;
+position: absolute;
+top: 0;
+left: -20px;
+        }
+        .my_radio:checked + span::before{
+           content: '';
+           width: 10px;
+           height: 10px;
+           border-radius: 50%;
+           background-color: #f89151;
+           display: block;
+           position: absolute;
+           top: 5px;
+left: -15px;
+z-index: 1;
+        }
+        .my_radio + span{
+position: relative;
+margin-left: 20px;
+        }
+        .my_radio{
+            opacity: 0;
+        }
+        .my_radio:checked + span{
+            color: #f89151;
+        }
+        .form_button{
+            background-color: black;
+            color: white;
+            text-transform: uppercase;
+            padding: 10px 15px;
+            border-radius: 3px;
+            border: 0;
+        }
+        .button{
+            text-align: right;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="form_container">
+        <form>
+            <h2 class="form_title">Оставить отзыв</h2>
+            <div class="form_row">
+                <div class="form_item--half">
+                    <label class="form_label">Ваше имя</label>
+                    <input class="form_input" placeholder="Андрей">
+                </div>
+                <div class="form_item--half"> 
+                <label class="form_label">Ссылка на профиль VK</label>
+                <input class="form_input" placeholder="vk.com">
+            </div>  
+        </div>
+            <div class="form_row">
+                <div class="form_item">
+                <label class="form_label">Текст отзыва</label>
+                <textarea class="form_input form_textarea">Мне понравилось
+                </textarea>
+            </div>
+            </div>
+            <div class="form_row">
+<div class="form_item--half">
+    <div>Отображать фото в отзыве?</div>
+    <label><input class="my_radio" type="radio" name="photo"/><span>да</span></label>
+    <label><input class="my_radio" type="radio" name="photo"/><span>нет</span></label>
+</div>
+<div class="button">
+    <input type="submit" class="form_button"/>
+</div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
